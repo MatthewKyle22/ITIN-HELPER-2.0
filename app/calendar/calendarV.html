@@ -7,34 +7,16 @@
         
         <!--calendar grid-->
         <div class="month">
-  <div class="week">
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-  </div>
-  <div class="week">
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-  </div>
-  <div class="week">
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-    <div class="day"></div>
-  </div>
-</div>
+            <div class="week" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day">
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+            </div>
+        </div>
 
 
             <!--clickable rows that allow you to edit data-->
@@ -44,6 +26,8 @@
             <!--    {{day.lunch}}-->
             <!--    {{day.dinner}}-->
             <!--</div>-->
+            
+            
             <!--buttons to close input col, add row, and save data-->
             <button class="close" ng-show="CalCtrl.showConfig" ng-click="CalCtrl.showConfig = null">Close</button>
             <button ng-click="CalCtrl.add()">Add Day</button>
