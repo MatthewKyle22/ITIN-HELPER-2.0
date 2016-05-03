@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    background:#7f7f7f;
+    background:rgba(19,15,225,0.5);
+    flex: 0 0 3rem;
+}
+
+ui-view {
+    max-width: 100vw;
+    overflow: scroll;
+    max-height: calc(100vh - 66px);
+}
+
+.left-align {
+    font-size: 22px;
+    padding-left: 5%;
+}
+
+.right {
+    padding-right: 3%;
+}
+
+.leftWindow {
+    width: 50vw;
+    height: 100vh;
+    float: left;
+    background-color:red;
+}
+
+.rightWindow {
+    width: 50vw;
+    height: 100vh;
+    background-color: blue;
+}
+
+.fcol {
+    display: flex;
+    flex-flow: column;
+}
+
+.frow {
+    display: flex;
+    flex-flow: row;
+}
+
+.fwrap {
+    flex-wrap: wrap;
+}
+
+.f1 {
+    flex: 1;
+}
+
+.calendar {
+    position: relative;
+}
+
+.config {
+    background: rgba(0,0,0,0.1);
+    min-width: 25vw;
+}
+
+.day {
+    padding: 1rem;
+    cursor: pointer;
+    border: 1px solid #F5F5F5;
+}
+
+.day:hover {
+    background: #7694C0;
+}
+
+.close {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+}
+
+.row {
+    border: 1px black;
+}
+/****************Calendar CSS***********************/
+
+.week {
+  display: flex;
+  height: 80px;
+}
+
+.day {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+
+
+/* OTHER STYLES */
+
+
+
+body {
+  background: linear-gradient(top, black, black);
+  background-attachment: fixed;
+}
+
+.month {
+  max-width: 560px;
+  margin: 20px auto;
+}
+
+.day {
+  padding: 5px;
+  background-color: transparentize(white, 0.30);
+  box-shadow: 
+    -1px -1px black, 
+    inset -1px -1px 0 0 black;
+}

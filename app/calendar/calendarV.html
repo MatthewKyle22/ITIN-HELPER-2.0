@@ -1,0 +1,70 @@
+<div class="frow f1">
+    <!--calendar window-->
+    <div class="calendar f1">
+        CalendarView
+        <h3>Hello {{CalCtrl.name}} Family!</h3>
+        
+        
+        <!--calendar grid-->
+        <div class="month">
+  <div class="week">
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+  </div>
+  <div class="week">
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+  </div>
+  <div class="week">
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+  </div>
+</div>
+
+
+            <!--clickable rows that allow you to edit data-->
+            <!--<div class="day" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day">-->
+            <!--    Day {{$index + 1}}-->
+            <!--    {{day.breakfast}}-->
+            <!--    {{day.lunch}}-->
+            <!--    {{day.dinner}}-->
+            <!--</div>-->
+            <!--buttons to close input col, add row, and save data-->
+            <button class="close" ng-show="CalCtrl.showConfig" ng-click="CalCtrl.showConfig = null">Close</button>
+            <button ng-click="CalCtrl.add()">Add Day</button>
+            <button ng-click="CalCtrl.email()">Save Itin</button>
+        </div>
+    </div>
+    
+    
+    
+    
+    <!--input div-->
+    <div class="config" ng-show="CalCtrl.showConfig">
+        config view
+        <div ng-repeat="(key, value) in CalCtrl.showConfig">
+            {{key}}
+            <input type="text" ng-model="CalCtrl.showConfig[key]"/>
+        </div>
+        
+        <input type="text" ng-model="CalCtrl.name"/>
+        <!--<input type="text" ng-model="CalCtrl.showConfig.breakfast"/>-->
+        <!--<input type="text" ng-model="CalCtrl.showConfig.lunch"/>-->
+        <!--<input type="text" ng-model="CalCtrl.showConfig.dinner"/>-->
+    </div>
+</div>
