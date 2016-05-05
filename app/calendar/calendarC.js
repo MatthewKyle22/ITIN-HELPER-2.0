@@ -11,34 +11,33 @@ function calendarC(Storage) {
     self.cal = Storage.get('calendar') || [
         {
             breakfast: 'Cafe Mickey',
-            lunch: 'Momma Melrose',
-            dinner: 'Tepan edo',
+            morning: 'Epcot',
+            lunch: 'Quick Service',
+            afternoon: 'Magic Kingdom',
+            dinner: 'Ohana',
+            evening: 'Fireworks'
         }
     ];
     
-    // trying to add row for day.... throws my H3 tag  
-    // self.add = function() {
-    //     self.cal.push({
-    //         <div class="week">
-    //             <div class="day"></div>
-    //             <div class="day"></div>
-    //             <div class="day"></div>
-    //             <div class="day"></div>
-    //             <div class="day"></div>
-    //             <div class="day"></div>
-    //             <div class="day"></div>
-    //         </div>
-    //     })
-    // }
     
     // adds row object
-    // self.add = function() {
-    //     self.cal.push({
-    //         breakfast: 'Hello',
-    //         lunch: 'world',
-    //         dinner: 'dinner'
-    //     });
-    // };
+    self.add = function() {
+        self.cal.push({
+            breakfast: 'Cafe Mickey',
+            morning: 'Epcot',
+            lunch: 'Quick Service',
+            afternoon: 'Magic Kingdom',
+            dinner: 'Ohana',
+            evening: 'Fireworks'
+        });
+    };
+    
+    
+    //removes row selected
+    self.remove = function (index) {
+        self.cal.splice(index, 1);
+        self.showConfig = null;
+    };
     
      // pushing keys to store in local storage
     self.email = function() {

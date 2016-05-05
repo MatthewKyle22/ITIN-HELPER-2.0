@@ -1,38 +1,50 @@
 <div class="frow f1">
     <!--calendar window-->
     <div class="calendar f1">
-        CalendarView
-        <h3>Hello {{CalCtrl.name}} Family!</h3>
+        
+        <!--<h3>Hello {{CalCtrl.name}} Family!</h3>-->
+        <div class="disneyLogo">
+            <img src="http://www.steveandamysly.com/wp-content/uploads/2011/04/image_wdwlogo1996_1.png"></img>
+        </div>
         
         
         <!--calendar grid-->
-        <div class="month">
-            <div class="week" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day">
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
+        <div class="month fcol">
+            <div class="header">
+                <div class="day f1">Day</div>
+                <div class="day f2">Breakfast</div>
+                <div class="day f2">Morning</div>
+                <div class="day f2">Lunch</div>
+                <div class="day f2">Afternoon</div>
+                <div class="day f2">Dinner</div>
+                <div class="day f2">Evening</div>
             </div>
+            <div class="week" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day; CalCtrl.clickedIndex = $index">
+                <div class="day f1">Day {{$index + 1}}</div>
+                <div class="day f2">{{day.breakfast}}</div>
+                <div class="day f2">{{day.morning}}</div>
+                <div class="day f2">{{day.lunch}}</div>
+                <div class="day f2">{{day.afternoon}}</div>
+                <div class="day f2">{{day.dinner}}</div>
+                <div class="day f2">{{day.evening}}</div>
+            </div>
+            <button class="addday" ng-click="CalCtrl.add()">&#43; Day</button>
         </div>
 
 
             <!--clickable rows that allow you to edit data-->
-            <!--<div class="day" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day">-->
-            <!--    Day {{$index + 1}}-->
-            <!--    {{day.breakfast}}-->
-            <!--    {{day.lunch}}-->
-            <!--    {{day.dinner}}-->
-            <!--</div>-->
+        <!--<div class="day" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day">-->
+        <!--        Day {{$index + 1}}-->
+        <!--        {{day.breakfast}}-->
+        <!--        {{day.lunch}}-->
+        <!--        {{day.dinner}}-->
+        <!--</div>-->
             
             
-            <!--buttons to close input col, add row, and save data-->
-            <button class="close" ng-show="CalCtrl.showConfig" ng-click="CalCtrl.showConfig = null">Close</button>
-            <button ng-click="CalCtrl.add()">Add Day</button>
-            <button ng-click="CalCtrl.email()">Save Itin</button>
-        </div>
+            <!--buttons to close input col and save to local stoage-->
+            <button class="close" ng-show="CalCtrl.showConfig" ng-click="CalCtrl.showConfig = null">&#x2192;</button>
+            <button class="save"ng-click="CalCtrl.email()">Save Itin</button>
+        <!--</div>-->
     </div>
     
     
@@ -40,15 +52,18 @@
     
     <!--input div-->
     <div class="config" ng-show="CalCtrl.showConfig">
-        config view
+        
         <div ng-repeat="(key, value) in CalCtrl.showConfig">
             {{key}}
             <input type="text" ng-model="CalCtrl.showConfig[key]"/>
         </div>
         
-        <input type="text" ng-model="CalCtrl.name"/>
-        <!--<input type="text" ng-model="CalCtrl.showConfig.breakfast"/>-->
-        <!--<input type="text" ng-model="CalCtrl.showConfig.lunch"/>-->
-        <!--<input type="text" ng-model="CalCtrl.showConfig.dinner"/>-->
+        <button ng-click="CalCtrl.remove(CalCtrl.clickedIndex)">Remove Day</button>
+        
+        
+        
+        <!--for family name and such -->
+        <!--<input type="text" ng-model="CalCtrl.name"/>-->
     </div>
 </div>
+
