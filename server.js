@@ -3,7 +3,7 @@ var express = require('express'),
     logger = require('morgan'),
     bodyParser= require('body-parser'),
     app = express(),
-    port = process.env.PORT || 3000
+    port = process.env.PORT || 2222
     // apiRoutes = require('./routes')
 
     app.use(bodyParser.json())
@@ -12,6 +12,6 @@ var express = require('express'),
     app.use(logger("dev"))
     // app.use('/api', apiRoutes)
 
-mongoose.connect('')
+mongoose.connect('mongodb://itinhelper.net/calendar')
 
     app.listen(port)
