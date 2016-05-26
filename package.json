@@ -1,4 +1,11 @@
 {
+  ".source.js": {
+    "Snippet Name": {
+      "prefix": "Snippet Trigger",
+      "body": "Hello World!"
+    }
+  }
+}{
   "name": "itin-helper",
   "version": "1.0.0",
   "description": "",
