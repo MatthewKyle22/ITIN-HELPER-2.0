@@ -1,6 +1,18 @@
-<!-- <form class="" action="index.html" method="post">
-User:  <input type="button" name="name" value="">
-Password:  <input type="button" name="name" value="">
-
-</form> -->
-<h1>HELLO</h1>
+<div>
+  <form ng-submit="logCtrl.login()">
+    <div>
+      <!-- username -->
+      <div>
+        <label>Username</label>
+        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.username">
+      </div>
+      <!-- password -->
+      <div>
+        <label>Password</label>
+        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.password">
+      </div>
+      <!-- submit -->
+      <button type="submit" name="action">Submit</button>
+    </div>
+  </form>
+</div>

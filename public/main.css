@@ -6,6 +6,7 @@
 }
 /*walt dis img*/
 .disneyLogo {
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -132,7 +133,7 @@ ui-view {
   border-radius: 4px;
   min-height: 145px;
   min-width: 582px;
-  
+
 }
 
 .day {
@@ -143,7 +144,7 @@ ui-view {
   /*  -1px -1px black, */
   /*  inset -1px -1px 0 0 black;*/
   word-break: break-word;
-  
+
 }
 
 .week:hover {

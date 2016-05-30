@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/MatthewKyle22/ITIN-HELPER-2.0#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
+    "jsonwebtoken": "^7.0.0",
     "mongoose": "^4.4.19",
     "morgan": "^1.7.0"
   }
