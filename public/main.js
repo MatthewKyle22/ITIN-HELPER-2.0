@@ -13,7 +13,6 @@
         .config(Config);
         // .controller('loginController', loginCtrl)
         // .factory('AuthInterceptor', function($q, $location, $window)
-        
 //******Router Function*******
     function Config($stateProvider, $urlRouterProvider) {
         $stateProvider
