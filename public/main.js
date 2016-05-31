@@ -1,3 +1,4 @@
+(function() {
 angular.module('itinHelper', ['ui.router'])
     .config(Config);
 
@@ -24,3 +25,4 @@ function Config($stateProvider, $urlRouterProvider) {
 
             $urlRouterProvider.otherwise('/');
 }
+}());
