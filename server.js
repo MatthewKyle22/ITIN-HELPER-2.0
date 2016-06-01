@@ -8,7 +8,7 @@ var express = require('express'),
     mySpecialSecret = "Boom",
     port = process.env.PORT || 3000,
     apiRoutes = require('./routes')
-
+    User = 
 
     // app.user(cookieParser())
     app.use(bodyParser.json())
@@ -17,9 +17,6 @@ var express = require('express'),
     app.use(logger("dev"))
 
 mongoose.connect('mongodb://localhost:27017/calendar')
-
-    app.listen(port)
-
 
 
     //creating new user through Admin login
@@ -100,3 +97,5 @@ mongoose.connect('mongodb://localhost:27017/calendar')
         }
 
     }
+
+app.listen(port)

@@ -10,17 +10,42 @@
                 }
             })
         })
-        .config(Config);
-        // .controller('loginController', loginCtrl)
-        // .factory('AuthInterceptor', function($q, $location, $window)
-//******Router Function*******
+        .config(Config)
+        .controller('loginController', loginCtrl)
+        .factory('AuthInterceptor', function($q, $location, $window) {
+                var interceptorFactory = {};
+
+	           // this will happen on all HTTP requests
+	              interceptorFactory.request = function(config) {
+		              var token = $window.localStorage.getItem('token');
+                        if (token){
+			                config.headers['x-access-token'] = token;
+                         }
+		                       return config;
+                   };
+
+	               interceptorFactory.responseError = function(response) {
+                       if (response.status == 403) {
+			                $window.localStorage.removeItem('token')
+			                $location.path('/login');
+		                }
+                            return $q.reject(response);
+	                };
+
+	                   return interceptorFactory;
+
+        })
+
+
+
+//******Router Setup*******
     function Config($stateProvider, $urlRouterProvider) {
         $stateProvider
         //add .states for each html page
             .state('home', {
                 url: '/',
-                templateUrl: '/agentLogin/home.html'
-
+                templateUrl: '/agentLogin/home.html',
+                controller: 'loginController as logCtrl'
             })
 
             .state('calendar', {
