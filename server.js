@@ -8,7 +8,7 @@ var express = require('express'),
     mySpecialSecret = "Boom",
     port = process.env.PORT || 3000,
     apiRoutes = require('./routes')
-    User = 
+    
 
     // app.user(cookieParser())
     app.use(bodyParser.json())
