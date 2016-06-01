@@ -18,8 +18,9 @@ var userSchema = mongoose.Schema({
   email: {
       type    : String,
       unique  : true,
-      required: true
-  }
+    //   required: true
+  },
+  itineraries: []
 })
 
 
@@ -33,7 +34,7 @@ userSchema.pre('save', function(next){
 })
 
 // authenticating PW
-userSchema.methods.authenticate = function(userPassword) {
+userSchema.methods.matchUp = function(userPassword) {
     var user = this
     return bcrypt.compareSync(userPassword, user.password)
 }

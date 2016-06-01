@@ -1,18 +1,38 @@
+<h2>Login</h2>
 <div>
   <form ng-submit="logCtrl.login()">
     <div>
       <!-- username -->
       <div>
         <label>Username</label>
-        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.username">
+        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.usernameLogin">
       </div>
       <!-- password -->
       <div>
         <label>Password</label>
-        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.password">
+        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.passwordLogin">
       </div>
       <!-- submit -->
-      <input type="submit" value="text">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<h2>New User</h2>
+<div>
+  <form ng-submit="logCtrl.login()">
+    <div>
+      <!-- username -->
+      <div>
+        <label>Username</label>
+        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.usernameSignIn">
+      </div>
+      <!-- password -->
+      <div>
+        <label>Password</label>
+        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.passwordSignIn">
+      </div>
+      <!-- submit -->
+      <input type="submit" value="Submit">
     </div>
   </form>
 </div>

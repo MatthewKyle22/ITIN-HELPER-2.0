@@ -62,6 +62,16 @@
             $urlRouterProvider.otherwise('/');
     }
 
+//New User CONTROLLER
+ // function loginCtrl ($http, $state, $window, $rootScope, $location) {
+ //     var logCtrl = this
+ //     logCtrl.page = 'NewUser'
+ //
+ //     logCtrl.newUser = function(){
+ //         $http.post('/newUser', {username: logCtrl.username, password: logCtrl.password})
+ //         .then(function(response)
+ //
+
 // LOGIN CONTROLLER
   function loginCtrl ($http, $state, $window, $rootScope, $location) {
     var logCtrl = this
@@ -76,7 +86,7 @@
            if(token){
              $window.localStorage.setItem('token',token)
              $state.go('profile')
-           }else{
+           } else {
              console.log("no token found")
            }
       })
