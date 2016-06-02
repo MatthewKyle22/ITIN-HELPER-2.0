@@ -12,15 +12,15 @@ var userSchema = mongoose.Schema({
       type    : String,
       required: true
   },
-  admin: {
+  admin:    {
       type    : Boolean
   },
-  email: {
+  email:    {
       type    : String,
       unique  : true,
-    //   required: true
+      required: true
   },
-  itineraries: []
+  itineraries : []
 })
 
 

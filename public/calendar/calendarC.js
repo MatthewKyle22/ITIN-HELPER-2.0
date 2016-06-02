@@ -1,13 +1,13 @@
 angular.module('itinHelper')
     .controller('calendarC', calendarC);
-    
+
 function calendarC(Storage) {
     var self = this;
-    
+
     self.showConfig;
-    
-    self.name = "Stevens";
-    
+
+    // self.name = "Stevens";
+
     self.cal = Storage.get('calendar') || [
         {
             breakfast: 'Cafe Mickey',
@@ -18,8 +18,8 @@ function calendarC(Storage) {
             evening: 'Fireworks'
         }
     ];
-    
-    
+
+
     // adds row object
     self.add = function() {
         self.cal.push({
@@ -31,17 +31,17 @@ function calendarC(Storage) {
             evening: 'Fireworks'
         });
     };
-    
-    
+
+
     //removes row selected
     self.remove = function (index) {
         self.cal.splice(index, 1);
         self.showConfig = null;
     };
-    
+
      // pushing keys to store in local storage
     self.email = function() {
         Storage.set('calendar', self.cal);
     };
-    
+
 }
