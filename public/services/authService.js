@@ -1,4 +1,4 @@
-angular.module('itinHelper')
+angular.module('authService', [])
     .factory('auth', auth)
     .factory('authToken', authToken)
     .factory('authInterceptor', authInterceptor)
@@ -19,7 +19,7 @@ angular.module('itinHelper')
         interceptorFactory.responseError = function(response) {
                if (response.status == 403) {
                     $window.localStorage.removeItem('token')
-                    $location.path('/login');
+                    $location.path('/api/logIn');
                 }
                     return $q.reject(response);
         };
@@ -28,7 +28,7 @@ angular.module('itinHelper')
 
     }
     function authToken($window) {
-        var authTokenfactory = {};
+        var authTokenFactory = {};
 
         authTokenFactory.getToken = function () {
             return $window.localStorage.getItem('token');
@@ -40,13 +40,13 @@ angular.module('itinHelper')
             } else {
                 $window.localStorage.remove.Item('token');
             }
-            return authTokenFactory;
         };
+        return authTokenFactory;
     }
     function auth($http, $q, authToken) {
         var authFactory = {};
         authFactory.login = function(username, password) {
-            return $http.post('/api/authenticate', {
+            return $http.post('/api/logIn', {
                 username: username,
                 password: password
             })

@@ -5,12 +5,12 @@
       <!-- username -->
       <div>
         <label>Username</label>
-        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.usernameLogin">
+        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.username">
       </div>
       <!-- password -->
       <div>
         <label>Password</label>
-        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.passwordLogin">
+        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.password">
       </div>
       <!-- submit -->
       <input type="submit" value="Submit">
@@ -22,17 +22,17 @@
 <!-- SIGN UP TO BE RELOCATED -->
 <h2>New User</h2>
 <div>
-  <form ng-submit="logCtrl.login()">
+  <form ng-submit="logCtrl.signUp()">
     <div>
       <!-- username -->
       <div>
         <label>Username</label>
-        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.usernameSignIn">
+        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.newUser.username">
       </div>
       <!-- password -->
       <div>
         <label>Password</label>
-        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.passwordSignIn">
+        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.newUser.password">
       </div>
       <!-- submit -->
       <input type="submit" value="Submit">
