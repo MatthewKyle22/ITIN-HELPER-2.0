@@ -11,31 +11,8 @@
             })
         })
         .config(Config)
-        .controller('loginController', loginCtrl)
-        .factory('AuthInterceptor', function($q, $location, $window) {
-                var interceptorFactory = {};
-
-	           // this will happen on all HTTP requests
-	              interceptorFactory.request = function(config) {
-		              var token = $window.localStorage.getItem('token');
-                        if (token){
-			                config.headers['x-access-token'] = token;
-                         }
-		                       return config;
-                   };
-
-	               interceptorFactory.responseError = function(response) {
-                       if (response.status == 403) {
-			                $window.localStorage.removeItem('token')
-			                $location.path('/login');
-		                }
-                            return $q.reject(response);
-	                };
-
-	                   return interceptorFactory;
-
-        })
-
+        // .controller('loginController', loginCtrl)
+    
 
 
 //******Router Setup*******
@@ -44,56 +21,22 @@
         //add .states for each html page
             .state('home', {
                 url: '/',
-                templateUrl: '/agentLogin/home.html',
+                templateUrl: '/agentLogin/login.html',
                 controller: 'loginController as logCtrl'
             })
 
-            .state('calendar', {
-                url: '/calendar',
-                templateUrl: '/calendar/calendarV.html',
+            .state('iBuilder', {
+                url: '/iBuilder',
+                templateUrl: '/iBuilder/calendarV.html',
                 controller: 'calendarC as CalCtrl',
             })
-            .state('clients', {
-                url: '/clients',
-                templateUrl: '/clients/clientsV.html'
+            .state('iClients', {
+                url: '/iClients',
+                templateUrl: '/iClients/clientsV.html'
             });
 
 
             $urlRouterProvider.otherwise('/');
     }
 
-//New User CONTROLLER
- // function loginCtrl ($http, $state, $window, $rootScope, $location) {
- //     var logCtrl = this
- //     logCtrl.page = 'NewUser'
- //
- //     logCtrl.newUser = function(){
- //         $http.post('/newUser', {username: logCtrl.username, password: logCtrl.password})
- //         .then(function(response)
- //
-
-// LOGIN CONTROLLER
-  function loginCtrl ($http, $state, $window, $rootScope, $location) {
-    var logCtrl = this
-    logCtrl.page = 'Login'
-
-    //create login method to send user info to server
-    logCtrl.login = function(){
-      $http.post('/login',{username: logCtrl.username, password: logCtrl.password})
-      .then(function(response){
-          console.log("from login route",response)
-           var token = response.data.token
-           if(token){
-             $window.localStorage.setItem('token',token)
-             $state.go('profile')
-           } else {
-             console.log("no token found")
-           }
-      })
-    }
-    logCtrl.logout = function(){
-      $window.localStorage.removeItem('token')
-      $state.go('login')
-    }
-  }
-}())
+}());
