@@ -2,7 +2,7 @@
     angular.module('itinHelper', ['ui.router', 'authService', 'userFactory'])
         .run(function ($rootScope, $state, $window) {
             $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-                console.log("authenticating front end");
+                // console.log("authenticating front end");
                 if(toState.authenticate) {
                     if (!$window.localStorage.getItem('token')) {
                         $state.transitionTo('login')

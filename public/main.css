@@ -55,8 +55,8 @@ body {
 
 ui-view {
     max-width: 100vw;
-    overflow: scroll;
-    max-height: calc(100vh - 66px);
+    overflow: auto;
+    /*max-height: calc(100vh - 66px);*/
 }
 
 /*splits screen when config window opens*/

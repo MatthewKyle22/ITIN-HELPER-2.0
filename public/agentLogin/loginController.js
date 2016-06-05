@@ -24,7 +24,6 @@ loginCtrl.$inject = ["$http", "$state", "$window", "$rootScope", "$location", "a
         logCtrl.login = function() {
             auth.login(logCtrl.username, logCtrl.password)
             .then(function (res) {
-                console.log('hellor')
                 console.log(res)
                 authToken.setToken(res.data.token);
                 if(res.data.success){

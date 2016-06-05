@@ -1,41 +1,52 @@
-<h2>Login</h2>
-<div>
-  <form ng-submit="logCtrl.login()">
-    <div>
-      <!-- username -->
-      <div>
-        <label>Username</label>
-        <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.username">
-      </div>
-      <!-- password -->
-      <div>
-        <label>Password</label>
-        <input id="user_pw" type="password" class="validate" ng-model="logCtrl.password">
-      </div>
-      <!-- submit -->
-      <input type="submit" value="Submit">
+<style>
+body {
+    /*background: url("https://drscdn.500px.org/photo/9716365/q%3D80_m%3D1500/de633e2c6cb9aad29fe6346231b719ec") no-repeat center center;*/
+    background: url('assets/castlePic.jpg')no-repeat center center;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+.frow {
+    display: none;
+}
+</style>
+<div class='overlay'>
+    <div id = "loginWrapper">
+      <form ng-submit="logCtrl.login()">
+        <h2>Login</h2>
+        <div>
+          <!-- username -->
+          <div>
+            <input placeholder="Username" id="icon_prefix" type="text" class="validate" ng-model="logCtrl.username">
+          </div>
+          <!-- password -->
+          <div>
+            <input placeholder="Password" id="user_pw" type="password" class="validate" ng-model="logCtrl.password">
+          </div>
+          <!-- submit -->
+          <input class="logsubmit" type="submit" value="Submit">
+        </div>
+      </form>
     </div>
-  </form>
 </div>
-
 
 <!-- SIGN UP TO BE RELOCATED -->
-<h2>New User</h2>
+<!-- <h2>New User</h2>
 <div>
   <form ng-submit="logCtrl.signUp()">
-    <div>
+    <div> -->
       <!-- username -->
-      <div>
+      <!-- <div>
         <label>Username</label>
         <input id="icon_prefix" type="text" class="validate" ng-model="logCtrl.newUser.username">
-      </div>
+      </div> -->
       <!-- password -->
-      <div>
+      <!-- <div>
         <label>Password</label>
         <input id="user_pw" type="password" class="validate" ng-model="logCtrl.newUser.password">
-      </div>
+      </div> -->
       <!-- submit -->
-      <input type="submit" value="Submit">
+      <!-- <input type="submit" value="Submit">
     </div>
   </form>
-</div>
+</div> -->
