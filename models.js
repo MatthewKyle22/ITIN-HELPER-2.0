@@ -23,6 +23,10 @@ var userSchema = mongoose.Schema({
   itineraries : []
 })
 
+var itinSchema = mongoose.Schema ({
+    days: []
+})
+
 
 // middleware hashing PW
 userSchema.pre('save', function(next){
@@ -35,8 +39,8 @@ userSchema.pre('save', function(next){
 
 // authenticating PW
 userSchema.methods.matchUp = function(userPassword) {
-    var user = this
-    return bcrypt.compareSync(userPassword, user.password)
+    var user = this;
+    return bcrypt.compareSync(userPassword, user.password);
 }
 
 module.exports = mongoose.model("User", userSchema)

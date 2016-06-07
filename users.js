@@ -5,6 +5,33 @@ var mySpecialSecret = "Boom";
 
 module.exports = {
     userController: {
+        addItin: function(req, res) {
+            var itin = req.body.itinerary
+            User.findByIdAndUpdate(req.decoded._id, {
+                $push: {
+                    'itineraries': req.body.itinerary
+                }
+            }, {
+                new: true
+            }, function(err, user){
+                if(err) {
+                    res.json(err)
+                } else {
+                    res.json(user)
+                }
+            })
+        },
+        showItin: function(req, res) {
+            var userid = req.decoded._id
+            User.findById(userid).populate('itineraries').exec(function(err, user){
+                if(err){
+                    res.json(err)
+                } else {
+                    res.json(user.itineraries)
+                }
+            })
+        },
+
         create: function(req, res) {
             var user = new User(req.body)
             user.save(function(err, user){
@@ -23,7 +50,7 @@ module.exports = {
                 }
                 if (user) {
                     if(user.matchUp(req.body.password)) {
-                        var token = jwt.sign({username: user.username, id: user._id},
+                        var token = jwt.sign({username: user.username, _id: user._id, token: user.token},
                             mySpecialSecret,
                             {expiresIn: "8h"});
                     res.json({

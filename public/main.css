@@ -46,7 +46,7 @@ body {
     padding: 0;
     min-width: 100vw;
     min-height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
     font-family: sans-serif;
     text-rendering: geometricPrecision;
     background: linear-gradient(top, black, black);

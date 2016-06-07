@@ -38,6 +38,7 @@
                 url: '/iClients',
                 templateUrl: '/iClients/clientsV.html',
                 authenticate: true
+                // controller: 'itinController as itinCtrl'
             });
 
 

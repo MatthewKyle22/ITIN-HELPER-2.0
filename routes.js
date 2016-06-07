@@ -1,5 +1,9 @@
 var router = require('express').Router(),
-  userControl = require('./users')
+  userControl = require('./users'),
+  jwt = require('jsonwebtoken'),
+  mySpecialSecret = "Boom"
+
+
 
 router.route('/logIn')
     .post(userControl.userController.logIn)
@@ -10,7 +14,6 @@ router.route('/users/:id')
     .get(userControl.userController.single)
     .delete(userControl.userController.destroy)
     .put(userControl.userController.update)
-
 router.use(function(req, res, next) {
     var token = req.body.token || req.param('token') || req.headers['x-access-token']
     console.log("token from client", token);
@@ -35,6 +38,8 @@ router.use(function(req, res, next) {
             message: "no token provided"
         })
     }
-
 })
+router.route('/itineraries')
+    .put(userControl.userController.addItin)
+    .get(userControl.userController.showItin)
 module.exports = router
