@@ -23,7 +23,8 @@ module.exports = {
         },
         showItin: function(req, res) {
             var userid = req.decoded._id
-            User.findById(userid).populate('itineraries').exec(function(err, user){
+            console.log(req.decoded._id);
+            User.findById(userid).exec(function(err, user){
                 if(err){
                     res.json(err)
                 } else {

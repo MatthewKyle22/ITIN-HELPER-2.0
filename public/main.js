@@ -37,8 +37,8 @@
             .state('iClients', {
                 url: '/iClients',
                 templateUrl: '/iClients/clientsV.html',
+                controller: 'itinControl as itinCtrl',
                 authenticate: true
-                // controller: 'itinController as itinCtrl'
             });
 
 

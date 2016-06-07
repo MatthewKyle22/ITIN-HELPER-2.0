@@ -4,5 +4,8 @@ angular.module('itinHelper')
     function itinControl($http) {
         var self = this;
 
-        $http.showItin
+        $http.get('api/itineraries')
+            .then(function(res){
+                console.log(res)
+            })
     }
