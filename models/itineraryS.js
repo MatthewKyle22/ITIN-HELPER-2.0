@@ -8,7 +8,11 @@ itinSchema = new Schema({
     lunch     : String,
     afternoon : String,
     dinner    : String,
-    evening   : String
+    evening   : String,
+    user      : {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 })
 
 module.exports = mongoose.model('Itinerary', itinSchema);

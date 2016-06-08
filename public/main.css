@@ -179,16 +179,18 @@ button:focus {
 }
 
 .save {
-    padding: 10px;
+    padding: 4.5px;
     font-size: 1rem;
     margin-left: 5px;
-    border-radius: 2px;
+    border-radius: 4px;
     /*background-color: #DDD;*/
     background: #8F8DF5;
     border: 1px solid #DDD;
     color: white;
     outline: none;
     cursor: pointer;
+    float: right;
+    margin-right: 4.4vw;
 }
 
 .save:hover {

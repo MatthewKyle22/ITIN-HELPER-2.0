@@ -1,5 +1,6 @@
 var mongoose = require("mongoose")
 var bcrypt = require('bcryptjs')
+    require('./itineraryS')
 
 //user schemas
 var userSchema = mongoose.Schema({
@@ -20,8 +21,12 @@ var userSchema = mongoose.Schema({
       unique  : true,
     //   required: true
   },
-  itineraries : []
+  itineraries : [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Itinerary"
+  }]
 })
+
 
 //Itineraries Schema
 // var itinSchema = mongoose.Schema ({

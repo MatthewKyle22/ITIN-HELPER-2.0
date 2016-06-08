@@ -14,6 +14,7 @@ router.route('/users/:id')
     .get(userControl.userController.single)
     .delete(userControl.userController.destroy)
     .put(userControl.userController.update)
+// router.route('/users/:id/itineraries')
 router.use(function(req, res, next) {
     var token = req.body.token || req.param('token') || req.headers['x-access-token']
     console.log("token from client", token);
@@ -26,6 +27,7 @@ router.use(function(req, res, next) {
                 })
     //  - if it CAN be decoded, save the decoded token to the request, and we'll keep processing the request
             } else {
+                console.log(decoded)
                 req.decoded = decoded;
                 next()
             }
