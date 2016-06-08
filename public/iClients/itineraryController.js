@@ -3,10 +3,9 @@ angular.module('itinHelper')
 
     function itinControl($http) {
         var self = this;
-
         $http.get('api/itineraries')
             .then(function(res){
-                console.log(res);
+                console.log('check',res);
                 self.itineraries = res.data;
             })
     }
