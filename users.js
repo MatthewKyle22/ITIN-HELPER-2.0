@@ -106,22 +106,25 @@ module.exports = {
         logIn: function (req, res) {
             User.findOne({username: req.body.username},
             function(err, user){
+                console.log('hello', err, user)
                 if(err) {
-                    res.json(err)
+                    return res.json(err)
                 }
                 if (user) {
                     if(user.matchUp(req.body.password)) {
                         var token = jwt.sign({username: user.username, _id: user._id, token: user.token},
                             mySpecialSecret,
                             {expiresIn: "8h"});
-                    res.json({
+                    return res.json({
                         success: true,
                         message: "You Logged In!",
                         token: token
                     })
-                    }
                 } else {
-                    res.json({message: "User Does Not Exist"})
+                    console.log("does not match")
+                }
+                } else {
+                    return res.json({message: "User Does Not Exist"})
                 }
             })
         },
