@@ -10,12 +10,12 @@ function calendarC(Storage, $http) {
 
     self.cal = Storage.get('calendar') || [
         {
-            breakfast: 'Cafe Mickey',
-            morning: 'Epcot',
-            lunch: 'Quick Service',
-            afternoon: 'Magic Kingdom',
-            dinner: 'Ohana',
-            evening: 'Fireworks'
+            breakfast : 'Cafe Mickey',
+            morning   : 'Epcot',
+            lunch     : 'Quick Service',
+            afternoon : 'Magic Kingdom',
+            dinner    : 'Ohana',
+            evening   : 'Fireworks'
         }
     ];
 
@@ -23,12 +23,12 @@ function calendarC(Storage, $http) {
     // adds row object
     self.add = function() {
         self.cal.push({
-            breakfast: 'Cafe Mickey',
-            morning: 'Epcot',
-            lunch: 'Quick Service',
-            afternoon: 'Magic Kingdom',
-            dinner: 'Ohana',
-            evening: 'Fireworks'
+            breakfast : 'Cafe Mickey',
+            morning   : 'Epcot',
+            lunch     : 'Quick Service',
+            afternoon : 'Magic Kingdom',
+            dinner    : 'Ohana',
+            evening   : 'Fireworks'
         });
     };
 

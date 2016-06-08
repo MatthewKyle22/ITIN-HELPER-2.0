@@ -196,6 +196,18 @@ button:focus {
     cursor: pointer;
 }
 
+.remove {
+    background-color: #F38296;
+    border-radius: 3px;
+    color: white;
+    padding: 4.5px;
+    text-align: center;
+    cursor: pointer;
+}
+.remove:hover {
+    background-color: #F46982;
+}
+
 /* For mobile phones: */
 @media (max-width: 768px) {
     .day {
