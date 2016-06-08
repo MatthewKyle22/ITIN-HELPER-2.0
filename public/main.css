@@ -1,8 +1,3 @@
-body {
-    /*background: url("https://drscdn.500px.org/photo/9716365/q%3D80_m%3D1500/de633e2c6cb9aad29fe6346231b719ec") no-repeat center center;
-    background-size: cover;*/
-
-}
 
 /*itin helper*/
 .brand-logo {
@@ -46,7 +41,7 @@ body {
     padding: 0;
     min-width: 100vw;
     min-height: 100vh;
-    overflow: scroll;
+    overflow: auto;
     font-family: sans-serif;
     text-rendering: geometricPrecision;
     background: linear-gradient(top, black, black);
@@ -55,7 +50,7 @@ body {
 
 ui-view {
     max-width: 100vw;
-    overflow: auto;
+    overflow: scroll;
     /*max-height: calc(100vh - 66px);*/
 }
 

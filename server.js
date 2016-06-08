@@ -7,8 +7,8 @@ var express = require('express'),
     jwt = require('jsonwebtoken'),
     mySpecialSecret = "Boom",
     port = process.env.PORT || 3000,
-    apiRoutes = require('./routes')
-    User = require('./models')
+    apiRoutes = require('./routes'),
+    User = require('./models/usersS')
 
     // app.user(cookieParser())
     app.use(bodyParser.json())

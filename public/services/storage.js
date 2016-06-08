@@ -10,18 +10,18 @@ function Storage($window) {
         var item = JSON.parse(temp);
         return item.value;
     };
-    
+
     self.set = function(key, value) {
         var item = {
-            value: value
+            itinerary: value
         };
-    
-        return $window.localStorage.setItem(key, JSON.stringify(item));     
+
+        return $window.localStorage.setItem(key, JSON.stringify(item));
     };
-    
+
     self.delete = function(key) {
-        return $window.localStorage.deleteItem(key);     
+        return $window.localStorage.deleteItem(key);
     };
-    
+
     return self;
 }

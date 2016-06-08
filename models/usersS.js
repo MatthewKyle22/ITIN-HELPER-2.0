@@ -1,7 +1,7 @@
 var mongoose = require("mongoose")
 var bcrypt = require('bcryptjs')
 
-//defining user schemas
+//user schemas
 var userSchema = mongoose.Schema({
   username: {
       type    : String,
@@ -23,9 +23,10 @@ var userSchema = mongoose.Schema({
   itineraries : []
 })
 
-var itinSchema = mongoose.Schema ({
-    days: []
-})
+//Itineraries Schema
+// var itinSchema = mongoose.Schema ({
+//     days: []
+// })
 
 
 // middleware hashing PW
@@ -42,5 +43,5 @@ userSchema.methods.matchUp = function(userPassword) {
     var user = this;
     return bcrypt.compareSync(userPassword, user.password);
 }
-
+// modlue.exports = mongoose.model("Itinerary", itinSchema)
 module.exports = mongoose.model("User", userSchema)

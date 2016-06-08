@@ -1,4 +1,30 @@
 <h1>Hello from Clients</h1>
-<div >
+<div class="clientWrapper">
+    <div ng-repeat="itinerary in itinCtrl.itineraries" class="month fcol">
+        <div class="header">
+            <div class="day f1">Day</div>
+            <div class="day f2">Breakfast</div>
+            <div class="day f2">Morning</div>
+            <div class="day f2">Lunch</div>
+            <div class="day f2">Afternoon</div>
+            <div class="day f2">Dinner</div>
+            <div class="day f2">Evening</div>
+        </div>
+        <div class="week" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day; CalCtrl.clickedIndex = $index">
+            <div class="day f1">Day {{$index + 1}}</div>
+            <div class="day f2">{{day.breakfast}}</div>
+            <div class="day f2">{{day.morning}}</div>
+            <div class="day f2">{{day.lunch}}</div>
+            <div class="day f2">{{day.afternoon}}</div>
+            <div class="day f2">{{day.dinner}}</div>
+            <div class="day f2">{{day.evening}}</div>
+        </div>
 
+
+
+
+
+    <div ng-repeat="itinerary in itinCtrl.itineraries">
+        {{itinerary}}
+    </div>
 </div>

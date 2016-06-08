@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="itinHelper">
     <head>
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.css" type="text/css" /> -->
-        <link rel="stylesheet" href="main.css" type="text/css" />
         <link rel="stylesheet" href="/agentLogin/login.css" type="text/css" />
-        <body ng-app="itinHelper" class="fcol">
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <body  class="fcol" ng-controller="loginController as logCtrl">
             <nav class="frow">
                 <a class='brand-logo' ui-sref="iBuilder">Itin Helper</a>
                 <div class="f1"></div>
                 <a class="link" ui-sref="iBuilder">iBuilder</a>
-                <a class="link" href="#/iClients">iClients</a>
+                <a class="link" ui-sref="iClients">iClients</a>
+                <a class="link" ng-click="logCtrl.logout()">Logout</a>
             </nav>
             <ui-view class="f1 fcol"></ui-view>
 

@@ -6,6 +6,7 @@ angular.module('itinHelper')
 
         $http.get('api/itineraries')
             .then(function(res){
-                console.log(res)
+                console.log(res);
+                self.itineraries = res.data;
             })
     }

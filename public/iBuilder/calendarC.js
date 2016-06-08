@@ -1,7 +1,7 @@
 angular.module('itinHelper')
     .controller('calendarC', calendarC);
 
-function calendarC(Storage) {
+function calendarC(Storage, $http) {
     var self = this;
 
     self.showConfig;
@@ -40,8 +40,12 @@ function calendarC(Storage) {
     };
 
      // pushing keys to store in local storage
-    self.email = function() {
+    self.addItin = function() {
         Storage.set('calendar', self.cal);
+        console.log(self.cal)
+        $http.put('/api/itineraries', {itinerary: self.cal})
+            .then(function(res){
+                console.log(res);
+            })
     };
-
 }

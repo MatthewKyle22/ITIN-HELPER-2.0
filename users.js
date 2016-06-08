@@ -1,4 +1,4 @@
-var User = require("./models");
+var User = require("./models/usersS");
 var jwt = require('jsonwebtoken');
 var mySpecialSecret = "Boom";
 

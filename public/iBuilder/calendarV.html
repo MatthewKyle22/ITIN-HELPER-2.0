@@ -1,13 +1,13 @@
 <div class="frow f1">
     <!--calendar window-->
     <div class="calendar f1">
-        
+
         <!--<h3>Hello {{CalCtrl.name}} Family!</h3>-->
         <div class="disneyLogo">
             <img src="http://www.steveandamysly.com/wp-content/uploads/2011/04/image_wdwlogo1996_1.png"></img>
         </div>
-        
-        
+
+
         <!--calendar grid-->
         <div class="month fcol">
             <div class="header">
@@ -39,31 +39,30 @@
         <!--        {{day.lunch}}-->
         <!--        {{day.dinner}}-->
         <!--</div>-->
-            
-            
+
+
             <!--buttons to close input col and save to local stoage-->
             <button class="close" ng-show="CalCtrl.showConfig" ng-click="CalCtrl.showConfig = null">&#x2192;</button>
-            <button class="save"ng-click="CalCtrl.email()">Save Itin</button>
+            <button class="save"ng-click="CalCtrl.addItin()">Save Itin</button>
         <!--</div>-->
     </div>
-    
-    
-    
-    
+
+
+
+
     <!--input div-->
     <div class="config" ng-show="CalCtrl.showConfig">
-        
+
         <div ng-repeat="(key, value) in CalCtrl.showConfig">
             {{key}}
             <input type="text" ng-model="CalCtrl.showConfig[key]"/>
         </div>
-        
+
         <button ng-click="CalCtrl.remove(CalCtrl.clickedIndex)">Remove Day</button>
-        
-        
-        
+
+
+
         <!--for family name and such -->
         <!--<input type="text" ng-model="CalCtrl.name"/>-->
     </div>
 </div>
-
