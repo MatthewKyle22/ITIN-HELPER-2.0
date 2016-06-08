@@ -37,6 +37,9 @@ var userSchema = mongoose.Schema({
 // middleware hashing PW
 userSchema.pre('save', function(next){
     var user = this
+    if(!this.isModified("password")){
+        return next();
+    }
     var hashPassword = bcrypt.hashSync(user.password, 8)
     user.password = hashPassword
     console.log('Encrypt PW')

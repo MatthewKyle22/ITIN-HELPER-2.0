@@ -6,7 +6,7 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     jwt = require('jsonwebtoken'),
     mySpecialSecret = "Boom",
-    port = process.env.PORT || 80,
+    port = process.env.PORT || 3000,
     apiRoutes = require('./routes'),
     User = require('./models/usersS')
 
