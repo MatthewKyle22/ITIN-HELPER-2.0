@@ -27,6 +27,7 @@
 nav {
     /*background: #7f7f7f;*/
     background: #8F8DF5;
+    /*background: rgba(0, 0, 0, 0.9);*/
     flex: 0 0 4rem;
     justify-content: center;
     padding: 0 2rem;
@@ -180,7 +181,7 @@ button:focus {
 
 .save {
     padding: 4.5px;
-    font-size: 1rem;
+    font-size: .8rem;
     margin-left: 5px;
     border-radius: 4px;
     /*background-color: #DDD;*/
@@ -191,20 +192,24 @@ button:focus {
     cursor: pointer;
     float: right;
     margin-right: 4.4vw;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
 .save:hover {
-    background: #EEE;
+    background: #7775EB;
     cursor: pointer;
 }
 
 .remove {
+    font-size: .8rem;
     background-color: #F38296;
-    border-radius: 3px;
+    border-radius: 4px;
     color: white;
     padding: 4.5px;
     text-align: center;
     cursor: pointer;
+    border: 1px solid #DDD;
 }
 .remove:hover {
     background-color: #F46982;

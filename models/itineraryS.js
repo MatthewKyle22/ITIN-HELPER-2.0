@@ -15,4 +15,5 @@ itinSchema = new Schema({
     }
 })
 
+
 module.exports = mongoose.model('Itinerary', itinSchema);

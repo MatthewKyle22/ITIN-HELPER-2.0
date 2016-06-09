@@ -1,17 +1,16 @@
-.pageFill {
-    /*background-color: #F5F5F5;*/
+/*.builderFill {
     height: 100vh;
     width: 100vw;
     background: url('/assets/castlePicture.png')no-repeat center center;
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-
 }
-.clientWrapper{
-    background-color: rgba(255,255,255, 0.97);
+
+.builderWrapper {
+    background-color: #fff;
     margin: 5%;
     padding-top: 2.5%;
     padding-bottom: 2.5%;
     border-radius: 10px;
-}
+}*/
