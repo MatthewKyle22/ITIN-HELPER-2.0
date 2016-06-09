@@ -23,7 +23,7 @@ function deleteAll() {
     })
 
 }
-//
+//uncomment to run
 // deleteAll()
 
 module.exports = {
@@ -33,8 +33,8 @@ module.exports = {
                 if(err) {
                     return res.json(err)
                 } else {
-                    console.log(user)
-                    var body = req.body.itinerary
+                    console.log(req.body)
+                    var body = req.body.itinerary[req.body.itinerary.length - 1]
                     var itin = new Itinerary({
                         day       : body.day,
                         breakfast : body.breakfast,

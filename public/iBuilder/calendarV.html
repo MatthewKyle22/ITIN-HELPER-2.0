@@ -1,70 +1,74 @@
-<div class="frow f1">
-    <!--calendar window-->
-    <div class="calendar f1">
+<!-- <div class="builderFill">
+    <div class="builderWrapper"> -->
+        <div class="frow f1">
+            <!--calendar window-->
+            <div class="calendar f1">
 
-        <!--<h3>Hello {{CalCtrl.name}} Family!</h3>-->
-        <div class="disneyLogo">
+                <!--<h3>Hello {{CalCtrl.name}} Family!</h3>-->
+                <div class="disneyLogo">
             <img src="http://www.steveandamysly.com/wp-content/uploads/2011/04/image_wdwlogo1996_1.png"></img>
-        </div>
+                </div>
 
 
-        <!--calendar grid-->
-        <div class="month fcol">
-            <div class="header">
-                <div class="day f1">Day</div>
-                <div class="day f2">Breakfast</div>
-                <div class="day f2">Morning</div>
-                <div class="day f2">Lunch</div>
-                <div class="day f2">Afternoon</div>
-                <div class="day f2">Dinner</div>
-                <div class="day f2">Evening</div>
-            </div>
-            <div class="week" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day; CalCtrl.clickedIndex = $index">
-                <div class="day f1">Day {{$index + 1}}</div>
-                <div class="day f2">{{day.breakfast}}</div>
-                <div class="day f2">{{day.morning}}</div>
-                <div class="day f2">{{day.lunch}}</div>
-                <div class="day f2">{{day.afternoon}}</div>
-                <div class="day f2">{{day.dinner}}</div>
-                <div class="day f2">{{day.evening}}</div>
-            </div>
-            <button class="addday" ng-click="CalCtrl.add()">&#43; Day</button>
-        </div>
+                <!--calendar grid-->
+                <div class="month fcol">
+                    <div class="header">
+                        <div class="day f1">Day</div>
+                        <div class="day f2">Breakfast</div>
+                        <div class="day f2">Morning</div>
+                        <div class="day f2">Lunch</div>
+                        <div class="day f2">Afternoon</div>
+                        <div class="day f2">Dinner</div>
+                        <div class="day f2">Evening</div>
+                    </div>
+                    <div class="week" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day; CalCtrl.clickedIndex = $index">
+                        <div class="day f1">Day {{$index + 1}}</div>
+                        <div class="day f2">{{day.breakfast}}</div>
+                        <div class="day f2">{{day.morning}}</div>
+                        <div class="day f2">{{day.lunch}}</div>
+                        <div class="day f2">{{day.afternoon}}</div>
+                        <div class="day f2">{{day.dinner}}</div>
+                        <div class="day f2">{{day.evening}}</div>
+                    </div>
+                    <button class="addday" ng-click="CalCtrl.add()">&#43; Day</button>
+                </div>
 
 
-            <!--clickable rows that allow you to edit data-->
-        <!--<div class="day" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day">-->
-        <!--        Day {{$index + 1}}-->
-        <!--        {{day.breakfast}}-->
-        <!--        {{day.lunch}}-->
-        <!--        {{day.dinner}}-->
-        <!--</div>-->
+                    <!--clickable rows that allow you to edit data-->
+                    <!--<div class="day" ng-repeat="day in CalCtrl.cal" ng-click="CalCtrl.showConfig = day">-->
+                    <!--        Day {{$index + 1}}-->
+                    <!--        {{day.breakfast}}-->
+                    <!--        {{day.lunch}}-->
+                    <!--        {{day.dinner}}-->
+                    <!--</div>-->
 
 
-            <!--buttons to close input col and save to local stoage-->
-            <button class="close" ng-show="CalCtrl.showConfig" ng-click="CalCtrl.showConfig = null">&#x2192;</button>
+                    <!--buttons to close input col and save to local stoage-->
+                    <button class="close" ng-show="CalCtrl.showConfig" ng-click="CalCtrl.showConfig = null">&#x2192;</button>
 
-        <!--</div>-->
-    </div>
+                    <!--</div>-->
+                </div>
 
 
 
 
     <!--input div-->
-    <div class="config" ng-show="CalCtrl.showConfig">
+            <div class="config" ng-show="CalCtrl.showConfig">
 
-        <div ng-repeat="(key, value) in CalCtrl.showConfig">
+                <div ng-repeat="(key, value) in CalCtrl.showConfig">
             {{key}}
-            <input type="text" ng-model="CalCtrl.showConfig[key]"/>
-        </div>
-        <br>
-        <br>
+                    <input type="text" ng-model="CalCtrl.showConfig[key]"/>
+                </div>
+                <br>
+                <br>
 
-        <button class="remove" ng-click="CalCtrl.remove(CalCtrl.clickedIndex)">Remove Day</button>
-        <button class="save"ng-click="CalCtrl.addItin()">Save Itin</button>
+                <button class="remove" ng-click="CalCtrl.remove(CalCtrl.clickedIndex)">Remove Day</button>
+                <button class="save"ng-click="CalCtrl.addItin()">Save Itin</button>
 
 
         <!--for family name and such -->
         <!--<input type="text" ng-model="CalCtrl.name"/>-->
-    </div>
-</div>
+            </div>
+        </div>
+    <!-- </div>
+</div> -->

@@ -1,13 +1,28 @@
-<h1 style="text-align:center;">Client Itineraries</h1>
-<div class="clientWrapper">
-    <div ng-repeat="itinerary in itinCtrl.itineraries" class="month fcol">
-        <div class="header">
-            <div class="day f1">Client Itinerary</div>
 
-        </div>
-        <div>
-            <!-- {{itinerary}} -->
+<div class="pageFill">
+    <div class="clientWrapper">
+        <h1 style="text-align:center;">Client Itineraries</h1>
+        <div ng-repeat="itinerary in itinCtrl.itineraries" class="month fcol">
+            <div class="header">
+                <div class="day f1">Day</div>
+                <div class="day f2">Breakfast</div>
+                <div class="day f2">Morning</div>
+                <div class="day f2">Lunch</div>
+                <div class="day f2">Afternoon</div>
+                <div class="day f2">Dinner</div>
+                <div class="day f2">Evening</div>
 
+            </div>
+            <div ng-repeat="itinerary in itinCtrl.itineraries" class="week">
+                <div class="day f1">Day {{$index + 1}}</div>
+                <div class="day f2">{{itinerary.breakfast}}</div>
+                <div class="day f2">{{itinerary.morning}}</div>
+                <div class="day f2">{{itinerary.lunch}}</div>
+                <div class="day f2">{{itinerary.afternoon}}</div>
+                <div class="day f2">{{itinerary.dinner}}</div>
+                <div class="day f2">{{itinerary.evening}}</div>
+            </div>
+            <button class=""ng-click="CalCtrl.deleteAll()">Clear All</button>
         </div>
     </div>
 </div>
