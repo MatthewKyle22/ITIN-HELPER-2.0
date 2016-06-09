@@ -27,7 +27,7 @@
 nav {
     /*background: #7f7f7f;*/
     background: #8F8DF5;
-    /*background: rgba(0, 0, 0, 0.9);*/
+    /*background: rgba(0, 0, 0, 0.5);*/
     flex: 0 0 4rem;
     justify-content: center;
     padding: 0 2rem;
@@ -53,6 +53,9 @@ ui-view {
     max-width: 100vw;
     overflow: scroll;
     /*max-height: calc(100vh - 66px);*/
+    /*top: -60px;*/
+    /*position: relative;*/
+    /*z-index: -1;*/
 }
 
 /*splits screen when config window opens*/
